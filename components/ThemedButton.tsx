@@ -30,7 +30,7 @@ export const ThemedButton = ({
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: '#333', // cor de fundo padrão
+        backgroundColor: '#333', 
         paddingVertical: 12,
         paddingHorizontal: 20,
         borderRadius: 8,

@@ -1,10 +1,20 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, SafeAreaView, Button, GestureResponderEvent } from 'react-native';
 
+import {
+  createStaticNavigation,
+  useNavigation,
+  useNavigationContainerRef,
+} from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import { ThemedButton } from '@/components/ThemedButton';
+import { navigate } from 'expo-router/build/global-state/routing';
 
 
 const TabelaScreen = () => {
+
+  const navigation = useNavigation()
   const dados = [
     { nome: 'João', idade: 25, cidade: 'São Paulo' },
     { nome: 'Maria', idade: 30, cidade: 'Rio de Janeiro' },
@@ -39,8 +49,11 @@ const TabelaScreen = () => {
         </View>
 
       <ThemedButton
-        title="Submit"
-        onPress={() => console.log('clicado')}
+        title="Adict"
+        onPress={() => {
+          navigation.navigate('Form');
+          console.log("clicado");
+        }}
         lightColor="#fff44d"
         darkColor="#f7e600" 
         
@@ -94,7 +107,7 @@ const styles = StyleSheet.create({
   },
 
   celula: {
-    flex: 1,
+    width: 100,
     padding: 10,
     textAlign: 'left',
   },
